@@ -12,7 +12,7 @@ local calls = {}
 
 --------------------------------
 -- SET YOUR WEHBOOKS IN HERE
--- Images for mug shots will be uploaded here. Add a Discord webhook. 
+-- Images for mug shots will be uploaded here. Add a Discord webhook.
 local MugShotWebhook = ''
 
 -- Clock-in notifications for duty. Add a Discord webhook.
@@ -30,7 +30,11 @@ QBCore.Functions.CreateCallback('ps-mdt:server:MugShotWebhook', function(source,
     else
         cb(MugShotWebhook)
     end
-end)
+end)	filter: drop-shadow(0px 0px 5px var(--primary));
+	background-color: var(--primary-subtle);
+	border-radius: 10px;
+	border: 1px solid var(--primary);
+	cursor: pointer;
 
 local function GetActiveData(cid)
 	local player = type(cid) == "string" and cid or tostring(cid)
@@ -46,7 +50,7 @@ local function IsPoliceOrEms(job)
               return true
             end
          end
-         
+
          for k, v in pairs(Config.AmbulanceJobs) do
            if job == k then
               return true
@@ -181,7 +185,7 @@ QBCore.Commands.Add("mdtleaderboard", "Show MDT leaderboard", {}, false, functio
 		local firstName = record.firstname:sub(1,1):upper()..record.firstname:sub(2)
 		local lastName = record.lastname:sub(1,1):upper()..record.lastname:sub(2)
 		local total_time = format_time(record.total_time)
-	
+
 		leaderboard_message = leaderboard_message .. i .. '. **' .. firstName .. ' ' .. lastName .. '** - ' .. total_time .. '\n'
 	end
 
@@ -196,7 +200,7 @@ RegisterNetEvent("ps-mdt:server:ClockSystem", function()
     local firstName = PlayerData.charinfo.firstname:sub(1,1):upper()..PlayerData.charinfo.firstname:sub(2)
     local lastName = PlayerData.charinfo.lastname:sub(1,1):upper()..PlayerData.charinfo.lastname:sub(2)
     if PlayerData.job.onduty then
-        
+
         TriggerClientEvent('QBCore:Notify', source, "You're clocked-in", 'success')
 		MySQL.Async.insert('INSERT INTO mdt_clocking (user_id, firstname, lastname, clock_in_time) VALUES (:user_id, :firstname, :lastname, :clock_in_time) ON DUPLICATE KEY UPDATE user_id = :user_id, firstname = :firstname, lastname = :lastname, clock_in_time = :clock_in_time', {
 			user_id = PlayerData.citizenid,
@@ -226,11 +230,11 @@ RegisterNetEvent('mdt:server:openMDT', function()
 	local PlayerData = GetPlayerData(src)
 	if not PermCheck(src, PlayerData) then return end
 	local Radio = Player(src).state.radioChannel or 0
-		
+
 	if GetResourceState('ps-dispatch') == 'started' then
 		calls = exports['ps-dispatch']:GetDispatchCalls()
 	end
-		
+
 	activeUnits[PlayerData.citizenid] = {
 		cid = PlayerData.citizenid,
 		callSign = PlayerData.metadata['callsign'],
@@ -267,7 +271,7 @@ QBCore.Functions.CreateCallback('mdt:server:SearchProfile', function(source, cb,
 					people[index]['fingerprint'] = data.fingerprint
 				else
 					people[index]['fingerprint'] = ""
-				end				
+				end
                 citizenIds[#citizenIds+1] = data.citizenid
                 citizenIdIndexMap[data.citizenid] = index
             end
@@ -358,7 +362,7 @@ QBCore.Functions.CreateCallback('mdt:server:GetProfileData', function(source, cb
 	local JobType = GetJobType(PlayerData.job.name)
 	local target = GetPlayerDataById(sentId)
 	local JobName = PlayerData.job.name
-	
+
 	local apartmentData
 
 	if not target or not next(target) then return cb({}) end
@@ -394,7 +398,7 @@ QBCore.Functions.CreateCallback('mdt:server:GetProfileData', function(source, cb
 		else
 			TriggerClientEvent("QBCore:Notify", src, 'The citizen does not have a property.', 'error')
 			print('The citizen does not have a property. Set Config.UsingPsHousing to false.')
-		end	
+		end
     elseif Config.UsingDefaultQBApartments then
         apartmentData = GetPlayerApartment(target.citizenid)
         if apartmentData then
@@ -438,7 +442,7 @@ QBCore.Functions.CreateCallback('mdt:server:GetProfileData', function(source, cb
 		if next(convictions) then
 			for _, conv in pairs(convictions) do
 				if conv.warrant == "1" then person.warrant = true end
-				
+
 				-- Get the incident details
 				local id = conv.linkedincident
 				local incident = GetIncidentName(id)
@@ -496,7 +500,7 @@ QBCore.Functions.CreateCallback('mdt:server:GetProfileData', function(source, cb
 
     		    coordsLocation = tostring(coords.x .. "," .. coords.y .. "," .. coords.z)
     		    label = tostring(Coords[index].propertyid .. " " .. Coords[index].street)
-			
+
     		    Houses[#Houses + 1] = {
     		        label = label,
     		        coords = coordsLocation,
@@ -1345,7 +1349,7 @@ RegisterNetEvent('mdt:server:saveIncident', function(id, title, information, tag
                         MySQL.Async.fetchAll('SELECT `author`, `title`, `details` FROM `mdt_incidents` WHERE `id` = @id', { ['@id'] = infoResult }, function(result)
                             if result and #result > 0 then
                                 local message = generateMessageFromResult(result)
-                                
+
                                 for i=1, #associated do
                                     local associatedData = {
                                         cid = associated[i]['Cid'],
@@ -1363,13 +1367,13 @@ RegisterNetEvent('mdt:server:saveIncident', function(id, title, information, tag
                                         officersinvolved = officers,
                                         civsinvolved = civilians
                                     }
-                                    sendIncidentToDiscord(3989503, "MDT Incident Report", message, "ps-mdt | Made by Project Sloth", associatedData)                                
+                                    sendIncidentToDiscord(3989503, "MDT Incident Report", message, "ps-mdt | Made by Project Sloth", associatedData)
                                 end
                             else
                                 print('No incident found in the mdt_incidents table with id: ' .. infoResult)
                             end
                         end)
-                        
+
                         for i=1, #associated do
                             MySQL.insert('INSERT INTO `mdt_convictions` (`cid`, `linkedincident`, `warrant`, `guilty`, `processed`, `associated`, `charges`, `fine`, `sentence`, `recfine`, `recsentence`, `time`) VALUES (:cid, :linkedincident, :warrant, :guilty, :processed, :associated, :charges, :fine, :sentence, :recfine, :recsentence, :time)', {
                                 cid = associated[i]['Cid'],
@@ -1395,7 +1399,7 @@ RegisterNetEvent('mdt:server:saveIncident', function(id, title, information, tag
                 MySQL.Async.fetchAll('SELECT `author`, `title`, `details` FROM `mdt_incidents` WHERE `id` = @id', { ['@id'] = id }, function(result)
                     if result and #result > 0 then
                         local message = generateMessageFromResult(result)
-                        
+
                         for i=1, #associated do
                             local associatedData = {
                                 cid = associated[i]['Cid'],
@@ -1614,7 +1618,7 @@ RegisterNetEvent('mdt:server:getCallResponses', function(callid)
 	local Player = QBCore.Functions.GetPlayer(src)
 	if IsPoliceOrEms(Player.PlayerData.job.name) then
 		if isDispatchRunning then
-			
+
 			TriggerClientEvent('mdt:client:getCallResponses', src, calls[callid]['responses'], callid)
 		end
 	end
@@ -1788,7 +1792,7 @@ end
 -- Returns the source for the given citizenId
 QBCore.Functions.CreateCallback('mdt:server:GetPlayerSourceId', function(source, cb, targetCitizenId)
     local targetPlayer = QBCore.Functions.GetPlayerByCitizenId(targetCitizenId)
-    if targetPlayer == nil then 
+    if targetPlayer == nil then
         TriggerClientEvent('QBCore:Notify', source, "Citizen seems Asleep / Missing", "error")
         return
     end
@@ -1834,12 +1838,12 @@ QBCore.Functions.CreateCallback('getWeaponInfo', function(source, cb)
 					table.insert(weaponInfos, weaponInfo)
 				end
 			end
-		end	
+		end
 	end
     cb(weaponInfos)
 end)
 
-RegisterNetEvent('mdt:server:registerweapon', function(serial, imageurl, notes, owner, weapClass, weapModel) 
+RegisterNetEvent('mdt:server:registerweapon', function(serial, imageurl, notes, owner, weapClass, weapModel)
     exports['ps-mdt']:CreateWeaponInfo(serial, imageurl, notes, owner, weapClass, weapModel)
 end)
 
@@ -1871,8 +1875,8 @@ local function giveCitationItem(src, citizenId, fine, incidentId)
 	end
 	Player.Functions.AddItem('mdtcitation', 1, false, info)
 	TriggerClientEvent('QBCore:Notify', src, PlayerName.." (" ..citizenId.. ") received a citation!")
-	if Config.QBBankingUse then 
-		exports['qb-banking']:AddMoney(Officer.PlayerData.job.name, fine) 
+	if Config.QBBankingUse then
+		exports['qb-banking']:AddMoney(Officer.PlayerData.job.name, fine)
 	end
 	TriggerClientEvent('inventory:client:ItemBox', Player.PlayerData.source, QBCore.Shared.Items['mdtcitation'], "add")
 	TriggerEvent('mdt:server:AddLog', "A Fine was writen by "..OfficerFullName.." and was sent to "..PlayerName..", the Amount was $".. fine ..". (ID: "..incidentId.. ")")
@@ -1882,7 +1886,7 @@ end
 RegisterNetEvent('mdt:server:removeMoney', function(citizenId, fine, incidentId)
 	local src = source
 	local Player = QBCore.Functions.GetPlayerByCitizenId(citizenId)
-	
+
 	if not antiSpam then
 		if Player.Functions.RemoveMoney('bank', fine, 'lspd-fine') then
 			TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, fine.."$ was removed from your bank!")
@@ -1943,7 +1947,7 @@ function sendToDiscord(color, name, message, footer)
 				},
 			}
 		}
-	
+
 		PerformHttpRequest(ClockinWebhook, function(err, text, headers) end, 'POST', json.encode({username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
 	end
 end
@@ -1958,15 +1962,15 @@ function sendIncidentToDiscord(color, name, message, footer, associatedData)
         if associatedData then
             message = message .. "\n\n--- Associated Data ---"
             message = message .. "\nCID: " .. (associatedData.cid or "Not Found")
-            
+
             if associatedData.guilty == false then
                 pingMessage = "**Guilty: Not Guilty - Need Court Case** " .. rolePing
                 message = message .. "\n" .. pingMessage
             else
                 message = message .. "\nGuilty: " .. tostring(associatedData.guilty or "Not Found")
             end
-			
-			
+
+
             if associatedData.officersinvolved and #associatedData.officersinvolved > 0 then
                 local officersList = table.concat(associatedData.officersinvolved, ", ")
                 message = message .. "\nOfficers Involved: " .. officersList
@@ -2008,7 +2012,7 @@ function sendIncidentToDiscord(color, name, message, footer, associatedData)
             }
         }
 
-        PerformHttpRequest(IncidentWebhook, function(err, text, headers) end, 'POST', json.encode({content = pingMessage, username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })	
+        PerformHttpRequest(IncidentWebhook, function(err, text, headers) end, 'POST', json.encode({content = pingMessage, username = name, embeds = embed}), { ['Content-Type'] = 'application/json' })
     end
 end
 

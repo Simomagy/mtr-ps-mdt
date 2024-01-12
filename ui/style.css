@@ -1,27 +1,33 @@
 @import './tabler-icons/tabler-icons.css';
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap');
 :root {
-	--color-1: #252422;
-	--color-2: #eb5e28;
-	--color-3: #eb5e28;
+	--background: #252422;
 	--color-4: #5a2611;
 	--color-5: #252422;
 	--color-6: #252422;
 	--color-7: rgb(37, 36, 34);
-	--color-8: #eb5e28;
 	--color-9: #252422;
-	--color-10: #eb5e28;
+	--primary: #eb5f28;
+	--border-subtle: #3d3d3d;
+	--primary-subtle: #eb5f2863;
+	--text: #fffcf2;
+	--text-subtle: #ccc5b9;
+	--background: #252422;
+	--background-darker: #131211;
+	--transparent: rgba(0, 0, 0, 0);
+	--ease: all 0.2s ease-in-out;
+	--border-radius: 10px;
+	--box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 body {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Nunito Sans', sans-serif;
 	overflow: hidden;
 	display: block;
 }
 
 textarea {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -36,7 +42,7 @@ input::-webkit-inner-spin-button {
 
 .dashboard-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -53,7 +59,7 @@ input::-webkit-inner-spin-button {
 
 .profile-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -64,7 +70,7 @@ input::-webkit-inner-spin-button {
 
 .incidents-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -75,7 +81,7 @@ input::-webkit-inner-spin-button {
 
 .bolos-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -86,7 +92,7 @@ input::-webkit-inner-spin-button {
 
 .reports-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -97,7 +103,7 @@ input::-webkit-inner-spin-button {
 
 .penalcode-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -108,7 +114,7 @@ input::-webkit-inner-spin-button {
 
 .sop-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -119,7 +125,7 @@ input::-webkit-inner-spin-button {
 
 .dmv-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -130,7 +136,7 @@ input::-webkit-inner-spin-button {
 
 .weapons-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -141,7 +147,7 @@ input::-webkit-inner-spin-button {
 
 .stafflogs-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -153,7 +159,7 @@ input::-webkit-inner-spin-button {
 
 .container-load {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -163,14 +169,14 @@ input::-webkit-inner-spin-button {
 }
 
 .header {
-	height: 4vh;
-	background-color: var(--color-1);
-	border: 5px solid #393b39;
-	border-top-right-radius: 50px;
-	border-bottom-right-radius: 50px;
+	height: 8vh;
+	background-color: var(--background);
+	border: 2px solid var(--border-subtle);
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	width: 96.5%;
 	position: absolute;
-	top: 4vh;
+	top: 3vh;
 	display: flex;
 	align-items: center;
 	user-select: none;
@@ -185,9 +191,9 @@ input::-webkit-inner-spin-button {
 }
 
 .header-middle {
-	background-color: var(--color-2);
-	border-radius: 15px;
-	border: 5px solid #393b39;
+	background-color: var(--primary);
+	border-radius: 10px;
+	border: 2px solid var(--border-subtle);
 	width: fit-content;
 	height: 3.5vh;
 	padding: 8px;
@@ -213,51 +219,89 @@ input::-webkit-inner-spin-button {
 }
 
 .main-container {
-	border-top: 5px solid var(--color-3);
+	border-top: 2px solid var(--primary);
 	width: 100%;
 	height: 86%;
+	gap: 10px;
 	position: absolute;
 	display: flex;
 	bottom: 0;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+}
+
+.dispatchWarrant-container,
+.quoteBulletin-container,
+.dispatch-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 .nav-menu {
-	background-color: var(--color-1);
-	border-right: 5px solid var(--color-3);
+	background-color: var(--background-darker);
+	border-right: 2px solid var(--primary);
 	min-width: 22.5vh;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	user-select: none;
 	border-bottom-left-radius: 15px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .nav-item {
-	background-color: var(--color-4);
+	width: 80%;
+	background-color: var(--transparent);
+	border: 1px solid var(--transparent);
+	border-radius: 10px;
 	margin-top: 10px;
 	padding: 10px;
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
+	transition: var(--ease);
 }
 
 .nav-item:hover {
-	background-color: var(--color-3);
+	filter: drop-shadow(0px 0px 5px var(--primary));
+	background-color: var(--primary-subtle);
+	border-radius: 10px;
+	border: 1px solid var(--primary);
+	cursor: pointer;
 }
 
 .active-nav {
-	background-color: var(--color-3);
+	filter: drop-shadow(0px 0px 5px var(--primary));
+	background-color: var(--primary-subtle);
+	border-radius: 10px;
+	border: 1px solid var(--primary);
 }
 
-.warrants-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+.dispatch-comms-container,
+.warrants-container,
+.bulletin-container,
+.bulletin-container {
+	background-color: var(--background);
+	border: 2px solid var(--primary-subtle);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
 	display: flex;
 	flex-direction: column;
-	height: 80.7vh;
-	width: 50vh;
-	margin-top: 10px;
+	height: 100%;
+	width: 100%;
+	margin-top: 1vh;
 	margin-left: 10px;
+	transition: var(--ease);
+}
+
+.dispatch-comms-container:hover,
+.warrants-container:hover, .bulletin-container:hover, .quotes-container:hover, .dispatch-container:hover {
+	transform: translateY(-5px);
+	border: 2px solid var(--primary);
+	filter: drop-shadow(0px 0px 10px var(--primary));
 }
 
 .warrants-title {
@@ -302,7 +346,7 @@ input::-webkit-inner-spin-button {
 }
 
 .warrants-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .warrant-image {
@@ -345,15 +389,18 @@ input::-webkit-inner-spin-button {
 }
 
 .quotes-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
-	width: 50vh;
-	height: 75px;
+	background-color: var(--background);
+	border: 2px solid var(--primary-subtle);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	width: 100%;
+	height: 10%;
 	margin-top: 10px;
 	margin-left: 10px;
 	display: flex;
 	align-items: center;
 	user-select: none;
+	transition: var(--ease);
 }
 
 .quote-title {
@@ -386,20 +433,6 @@ input::-webkit-inner-spin-button {
 	margin: auto;
 	color: white;
 	font-size: 16px;
-}
-
-.bulletin-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 50vh;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	user-select: none;
-	overflow: hidden;
 }
 
 .bulletin-title {
@@ -441,7 +474,7 @@ input::-webkit-inner-spin-button {
 }
 
 .bulletin-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .bulletin-item-title {
@@ -501,15 +534,16 @@ span.bulletin-item-info[contenteditable]:empty::before {
 }
 
 .dispatch-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary-subtle);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
 	display: flex;
 	flex-direction: column;
-	height: 81.1vh;
-	width: 50vh;
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 15px;
+	transition: var(--ease);
 }
 
 .dispatch-title {
@@ -529,7 +563,7 @@ span.bulletin-item-info[contenteditable]:empty::before {
 }
 
 .active-unit-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -548,7 +582,7 @@ span.bulletin-item-info[contenteditable]:empty::before {
 }
 
 .active-unit-count {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-weight: bolder;
 	font-size: 14px;
@@ -567,7 +601,7 @@ span.bulletin-item-info[contenteditable]:empty::before {
 }
 
 .calls-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -724,7 +758,7 @@ span.bulletin-item-info[contenteditable]:empty::before {
 	font-size: 12px;
 	font-weight: bolder;
 	color: white;
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	padding: 5px;
 	padding-left: 12.5px;
 	padding-right: 12.5px;
@@ -821,7 +855,7 @@ span.bulletin-item-info[contenteditable]:empty::before {
 	font-size: 15px;
 	font-weight: bolder;
 	color: white;
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	padding: 5px;
 	padding-left: 12.5px;
 	padding-right: 12.5px;
@@ -881,8 +915,8 @@ a {
 }
 
 .profile-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -908,11 +942,11 @@ a {
 }
 
 .profile-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .profile-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -963,7 +997,7 @@ a {
 }
 
 .profile-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .profile-image {
@@ -1024,8 +1058,8 @@ a {
 }
 
 .manage-profile-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -1051,7 +1085,7 @@ a {
 }
 
 .manage-profile-editing-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 15px;
 	font-weight: lighter;
@@ -1133,7 +1167,7 @@ a {
 }
 
 .line {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	height: 2px;
 	margin-left: 10px;
 	margin-bottom: 10px;
@@ -1277,9 +1311,9 @@ a {
 }
 
 .manage-profile-licenses-container {
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	height: 20%;
 }
 
@@ -1327,10 +1361,10 @@ a {
 .manage-profile-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
 	height: 20%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 5px;
 	min-height: 100px;
 	max-height: 200px;
@@ -1370,7 +1404,7 @@ a {
 }
 
 .tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .tags-holder {
@@ -1428,10 +1462,10 @@ span.tag-input[contenteditable]:empty::before {
 .manage-profile-vehs-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
 	height: 20%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 5px;
 	max-height: 150px;
 	overflow: scroll;
@@ -1482,10 +1516,10 @@ span.tag-input[contenteditable]:empty::before {
 .manage-profile-houses-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
 	height: 20%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 5px;
 	max-height: 150px;
 	overflow: scroll;
@@ -1536,9 +1570,9 @@ span.tag-input[contenteditable]:empty::before {
 .manage-profile-gallery-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 5px;
 	height: 20%;
 	overflow: scroll;
@@ -1577,7 +1611,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .gallery-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .gallery-inner-container {
@@ -1633,8 +1667,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .convictions-title {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -1650,7 +1684,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .convictions-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .convictions-holder {
@@ -1663,8 +1697,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .profile-incidents-title {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -1680,7 +1714,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .profile-incidents-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .profile-incidents-holder {
@@ -1709,9 +1743,9 @@ span.tag-input[contenteditable]:empty::before {
 	z-index: 1;
 	width: 120px;
 	height: 120px;
-	border: 12px solid var(--color-1);
+	border: 12px solid var(--background);
 	border-radius: 50%;
-	border-top: 12px solid var(--color-3);
+	border-top: 12px solid var(--primary);
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
@@ -1725,7 +1759,7 @@ span.tag-input[contenteditable]:empty::before {
 	height: 120px;
 	border: 12px solid var(--color-4);
 	border-radius: 50%;
-	border-top: 12px solid var(--color-3);
+	border-top: 12px solid var(--primary);
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
@@ -1764,7 +1798,7 @@ span.tag-input[contenteditable]:empty::before {
 	width: fit-content;
 	padding: 2px;
 	margin: 0;
-	border: 1px solid var(--color-3);
+	border: 1px solid var(--primary);
 	background: var(--color-5);
 	z-index: 9999;
 	border-radius: 3px;
@@ -1825,7 +1859,7 @@ span.tag-input[contenteditable]:empty::before {
 	right: 6px;
 	top: 50%;
 	transform: translateY(-50%);
-	border: 5px solid transparent;
+	border: 2px solid transparent;
 	border-left-color: #808080;
 }
 
@@ -1865,23 +1899,23 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .view-incident:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .view-incident2:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .make-waypoint:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .view-profile:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .gallery-upload-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -1910,8 +1944,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .penalcode-embed {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 96.5%;
@@ -1929,8 +1963,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .sop-embed {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 96.5%;
@@ -1948,8 +1982,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .incidents-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -1975,11 +2009,11 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .incidents-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .incidents-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -2031,7 +2065,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .incidents-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .incidents-top-holder {
@@ -2090,8 +2124,8 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -2121,7 +2155,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-create {
@@ -2144,7 +2178,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-create:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-save {
@@ -2188,7 +2222,7 @@ span.tag-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-incidents-title-input input {
@@ -2221,7 +2255,7 @@ span.tag-input[contenteditable]:empty::before {
 .manage-incidents-tags-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2252,7 +2286,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-tags-add-btn {
@@ -2304,7 +2338,7 @@ span.tag-input[contenteditable]:empty::before {
 .manage-incidents-officers-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2352,7 +2386,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-officers-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-officers-holder {
@@ -2368,7 +2402,7 @@ span.tag-input[contenteditable]:empty::before {
 .manage-incidents-civilians-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2416,7 +2450,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-civilians-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-civilians-holder {
@@ -2432,7 +2466,7 @@ span.tag-input[contenteditable]:empty::before {
 .manage-incidents-evidence-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2480,7 +2514,7 @@ span.tag-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-evidence-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-incidents-evidence-holder {
@@ -2523,8 +2557,8 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .associated-incidents-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -2551,13 +2585,13 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .associated-incidents-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .associated-incidents-tags-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2588,7 +2622,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .associated-incidents-tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .associated-incidents-tags-add-btn {
@@ -2637,7 +2671,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .incidents-upload-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -2687,13 +2721,13 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .bulletin-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .associated-incidents-user-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -2806,7 +2840,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .associated-incidents-fine-input input {
@@ -2829,7 +2863,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 15px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .associated-incidents-sentence-input input {
@@ -2853,7 +2887,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 .control-button {
 	text-align: center;
 	background-color: var(--color-4);
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-bottom: 10px;
 	padding: 10px;
 }
@@ -2863,7 +2897,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .control-button:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	cursor: pointer;
 }
 
@@ -2942,7 +2976,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .incidents-person-search-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .incidents-person-search-item-pfp {
@@ -2984,7 +3018,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	font-size: 16px;
 	text-align: left;
 	padding-bottom: 2.5px;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 	user-select: none;
 }
 
@@ -3008,12 +3042,12 @@ span.tag-incident-input[contenteditable]:empty::before {
 	font-size: 16px;
 	text-align: left;
 	padding-bottom: 2.5px;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .bolos-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -3039,11 +3073,11 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .bolos-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .bolos-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -3095,8 +3129,8 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .manage-bolos-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -3144,7 +3178,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .manage-bolos-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-bolos-create {
@@ -3166,7 +3200,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .manage-bolos-create:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-bolos-input-tag {
@@ -3189,7 +3223,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-bolos-input-title input {
@@ -3212,7 +3246,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-bolos-input-plate input {
@@ -3235,7 +3269,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-bolos-input-owner input {
@@ -3258,7 +3292,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-bolos-input-individual input {
@@ -3341,9 +3375,9 @@ span.tag-incident-input[contenteditable]:empty::before {
 .manage-bolos-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	max-height: 150px;
 	overflow: scroll;
 }
@@ -3351,9 +3385,9 @@ span.tag-incident-input[contenteditable]:empty::before {
 .manage-bolos-gallery-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 10px;
 	height: 18vh;
 	overflow: scroll;
@@ -3392,15 +3426,15 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .officers-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-officers-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	max-height: 150px;
 	margin-top: 10px;
 	overflow: scroll;
@@ -3418,7 +3452,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .bolo-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .bolo-top-holder {
@@ -3478,7 +3512,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 	font-weight: lighter;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	background-color: var(--color-10);
+	background-color: var(--primary);
 	margin: auto;
 	margin-left: 5px;
 	margin-top: 10px;
@@ -3511,7 +3545,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .bolos-search-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-bolos-tags-add-btn {
@@ -3530,7 +3564,7 @@ span.tag-incident-input[contenteditable]:empty::before {
 }
 
 .manage-bolos-tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 span.tag-bolo-input[contenteditable]:empty::before {
@@ -3599,11 +3633,11 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .bolo-gallery-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .bolo-gallery-upload-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -3648,7 +3682,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .manage-bolos-editing-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 15px;
 	font-weight: lighter;
@@ -3666,8 +3700,8 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -3682,17 +3716,6 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 
 #home-warrants-container {
 	height: 50%;
-}
-
-.dispatch-comms-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
-	display: flex;
-	flex-direction: column;
-	height: 46.5%;
-	width: 50vh;
-	margin-top: 1vh;
-	margin-left: 10px;
 }
 
 .reports-title {
@@ -3712,11 +3735,11 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -3788,7 +3811,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	font-size: 14px;
 	font-weight: bold;
 	padding-left: 0.75vh;
-	color: var(--color-8);
+	color: var(--primary);
 }
 
 .dispatch-info-job-lspd {
@@ -3914,7 +3937,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	font-weight: lighter;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	background-color: var(--color-10);
+	background-color: var(--primary);
 	margin: auto;
 	margin-left: 5px;
 	margin-top: 10px;
@@ -3934,7 +3957,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	font-weight: lighter;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	background-color: var(--color-10);
+	background-color: var(--primary);
 	margin: auto;
 	margin-left: 5px;
 	margin-top: 10px;
@@ -3967,12 +3990,12 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-search-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-reports-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -4020,7 +4043,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .manage-reports-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-reports-create {
@@ -4042,7 +4065,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .manage-reports-create:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .manage-reports-input-tag {
@@ -4065,7 +4088,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-reports-input-title input {
@@ -4088,7 +4111,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-reports-input-type input {
@@ -4111,7 +4134,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-reports-input-owner input {
@@ -4134,7 +4157,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 	margin-bottom: 0px;
 	align-items: center;
 	display: flex;
-	border-bottom: 2px solid var(--color-3);
+	border-bottom: 2px solid var(--primary);
 }
 
 .manage-reports-input-individual input {
@@ -4212,7 +4235,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .manage-reports-editing-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 15px;
 	font-weight: lighter;
@@ -4258,9 +4281,9 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 .manage-reports-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	max-height: 150px;
 	overflow: scroll;
 }
@@ -4268,9 +4291,9 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 .manage-reports-gallery-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	margin-top: 10px;
 	height: 18vh;
 	overflow: scroll;
@@ -4309,15 +4332,15 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-officers-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-officers-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	max-height: 150px;
 	margin-top: 10px;
 	overflow: scroll;
@@ -4339,11 +4362,11 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-gallery-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-gallery-upload-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -4403,15 +4426,15 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .manage-reports-tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-civilians-tags-container {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 100%;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	max-height: 150px;
 	margin-top: 10px;
 	overflow: scroll;
@@ -4433,7 +4456,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-civilians-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-civilians-tags-holder {
@@ -4457,7 +4480,7 @@ span.officer-tag-bolo-input[contenteditable]:empty::before {
 }
 
 .reports-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .reports-top-holder {
@@ -4541,8 +4564,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .dmv-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -4557,7 +4580,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 	font-weight: lighter;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	background-color: var(--color-10);
+	background-color: var(--primary);
 	margin: auto;
 	margin-left: 5px;
 	margin-top: 10px;
@@ -4588,11 +4611,11 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .dmv-search-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .dmv-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -4632,8 +4655,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .vehicle-information-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -4698,7 +4721,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .dmv-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .dmv-image {
@@ -4868,7 +4891,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .vehicle-info-line {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	height: 2px;
 	margin-left: 10px;
 	margin-bottom: 10px;
@@ -4877,7 +4900,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 .vehicle-info-tags-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	color: white;
 	font-size: 18px;
 	font-weight: bolder;
@@ -4907,7 +4930,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .vehicle-info-tags-add-btn:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .vehicle-info-tags-add-btn {
@@ -4999,8 +5022,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .stafflogs-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -5049,8 +5072,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .leaderboard-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -5446,7 +5469,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .manage-incidents-editing-title {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	font-size: 15px;
 	font-weight: lighter;
@@ -5558,7 +5581,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 
 .offense-item {
 	background-color: #0b9509;
-	border: 1.5px solid black;
+	border: 1.2px solid black;
 	height: 5vh;
 	margin: 0.5vh;
 	flex-direction: column;
@@ -5632,8 +5655,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 	height: 100%;
 	margin-top: 40.5vh;
 }
-
-.radio-inner-container {
+shadow .radio-inner-container {
 	background-color: var(--color-5);
 	width: 30vh;
 	height: 17.5vh;
@@ -5864,15 +5886,15 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .active-unit-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .active-calls-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .dispatch-attached-units-container {
-	background-color: var(--color-1);
+	background-color: var(--background);
 	width: 92vh;
 	height: 46vh;
 	margin: auto;
@@ -5950,7 +5972,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .incidents-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .incidents-search-refresh {
@@ -5959,7 +5981,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 	font-weight: lighter;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	background-color: var(--color-10);
+	background-color: var(--primary);
 	margin: auto;
 	margin-left: 5px;
 	margin-top: 10px;
@@ -6166,7 +6188,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .dispatch-reply:hover {
-	background-color: var(--color-1);
+	background-color: var(--background);
 }
 .display_hidden {
 	display: none;
@@ -6174,7 +6196,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 
 .cams-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -6185,8 +6207,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .cams-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -6225,12 +6247,12 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .cams-items:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .weapons-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -6256,11 +6278,11 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .weapons-search-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .weapons-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -6300,8 +6322,8 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .weapon-information-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -6435,7 +6457,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .weapon-info-line {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	height: 2px;
 	margin-left: 10px;
 	margin-bottom: 10px;
@@ -6573,7 +6595,7 @@ span.tag-reports-input[contenteditable]:empty::before {
 }
 
 .weapons-item:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .weapons-image {
@@ -6623,7 +6645,7 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 	width: 100%;
 	height: 2px;
 	box-shadow: none;
-	background: var(--color-8);
+	background: var(--primary);
 	border-radius: 0px;
 	border: 0px;
 }
@@ -6652,7 +6674,7 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 	width: fit-content;
 	padding: 2px;
 	margin: 0;
-	border: 1px solid var(--color-3);
+	border: 1px solid var(--primary);
 	background: var(--color-5);
 	z-index: 100;
 	border-radius: 3px;
@@ -6713,7 +6735,7 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 	right: 6px;
 	top: 50%;
 	transform: translateY(-50%);
-	border: 5px solid transparent;
+	border: 2px solid transparent;
 	border-left-color: #808080;
 }
 
@@ -6731,7 +6753,7 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 
 .map-page-container {
 	background-color: var(--color-9);
-	border-radius: 15px;
+	border-radius: 10px;
 	position: absolute;
 	width: 96.5%;
 	height: 96.5%;
@@ -6741,8 +6763,8 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 }
 
 .calls-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -6768,11 +6790,11 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 }
 
 .calls-search-title:hover {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 }
 
 .calls-search-input {
-	background-color: var(--color-3);
+	background-color: var(--primary);
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -6801,8 +6823,8 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 }
 
 .map-container {
-	background-color: var(--color-1);
-	border: 2px solid var(--color-3);
+	background-color: var(--background);
+	border: 2px solid var(--primary);
 	display: flex;
 	flex-direction: column;
 	height: 80.7vh;
@@ -6853,7 +6875,7 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 }
 
 .map-item {
-	border: 2px solid var(--color-3);
+	border: 2px solid var(--primary);
 	position: absolute;
 	width: 58%;
 	height: 88.5%;
@@ -6872,4 +6894,30 @@ input[type='range'].vehicle-info-points-input::-moz-range-track {
 
 .leaflet-tooltip-right {
 	margin-left: 6px;
+}
+
+/* Utility Class */
+
+.drop-shadow {
+	filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+		drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+.drop-shadow-md {
+	filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+		drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+.drop-shadow-lg {
+	filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+		drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.drop-shadow-xl {
+	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+		drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.drop-shadow-2xl {
+	filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
